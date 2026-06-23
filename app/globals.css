@@ -1,13 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --background: rgb(31, 31, 31);
-  --card: black;
+  --background: rgb(20, 20, 20);
+  --card: rgb(34, 34, 34);
   --mainText: white;
   --secText: rgb(84, 84, 84);
-  --outline: rgb(168, 168, 168);
+  --outline: rgb(131, 131, 131);
   --red: rgb(232, 0, 0);
   --green: rgb(34, 230, 73);
+}
+
+.screen {
+  display: flex;
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1150px;
 }
 
 @theme {
