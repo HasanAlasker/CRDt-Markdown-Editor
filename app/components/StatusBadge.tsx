@@ -1,8 +1,7 @@
-import React from "react";
-
+// the map is overkill but i wanted to do it
 const StatusMap = {
-  1: { label: "Online", className: "bg-green-400" },
-  0: { label: "Offline", className: "bg-red-500" },
+  1: { label: "Online", className: "bg-green" },
+  0: { label: "Offline", className: "bg-red" },
 };
 
 export default function StatusBadge({ connected }: { connected: boolean }) {

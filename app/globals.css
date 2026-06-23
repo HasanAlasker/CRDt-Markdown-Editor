@@ -1,9 +1,34 @@
 @import "tailwindcss";
 
+:root {
+  --background: rgb(31, 31, 31);
+  --card: black;
+  --mainText: white;
+  --secText: rgb(84, 84, 84);
+  --outline: rgb(168, 168, 168);
+  --red: rgb(232, 0, 0);
+  --green: rgb(34, 230, 73);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-card: var(--card);
+  --color-mainText: var(--mainText);
+  --color-secText: var(--secText);
+  --color-outline: var(--outline);
+  --color-red: var(--red);
+  --color-green: var(--green);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--mainText);
+}
+
 .label {
-  background-color: rgb(33, 33, 33);
-  border: 1px solid rgb(84, 84, 84);
-  color: white;
+  background-color: var(--card);
+  border: 1px solid var(--outline);
+  color: var(--mainText);
   padding: 0.5rem 1rem;
   border-radius: 2rem;
 }
