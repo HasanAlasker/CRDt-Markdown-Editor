@@ -1,20 +1,61 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
   --background: rgb(20, 20, 20);
   --card: rgb(34, 34, 34);
   --mainText: white;
-  --secText: rgb(84, 84, 84);
+  --secText: rgb(146, 146, 146);
   --outline: rgb(131, 131, 131);
   --red: rgb(232, 0, 0);
   --green: rgb(34, 230, 73);
 }
 
+.prose {
+  --tw-prose-body: var(--mainText);
+  --tw-prose-headings: var(--mainText);
+  --tw-prose-bold: var(--mainText);
+  --tw-prose-quotes: var(--mainText);
+  --tw-prose-quote-borders: var(--outline);
+  --tw-prose-code: var(--mainText);
+  --tw-prose-counters: var(--mainText);
+  --tw-prose-bullets: var(--mainText);
+  --tw-prose-links: var(--mainText);
+  --tw-prose-hr: var(--outline);
+}
+
 .screen {
-  display: flex;
   margin: 0 auto;
   width: 95%;
   max-width: 1150px;
+  gap: 3rem;
+  padding-bottom: 4rem;
+}
+
+button {
+  cursor: pointer;
+  font-size: clamp(0.8rem, 1.3vw, 1rem);
+}
+
+a {
+  display: flex;
+  width: fit-content;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+h1 {
+  font-size: clamp(1.4rem, 2.6vw, 1.7rem);
+  font-weight: bold;
+}
+
+h2 {
+  color: var(--mainText);
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
 }
 
 @theme {
@@ -39,3 +80,28 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 2rem;
 }
+.EasyMDEContainer .editor-toolbar {
+  background-color: var(--card);
+  border: solid 1px var(--outline);
+}
+
+.EasyMDEContainer .CodeMirror-cursor {
+  border-left: 1px solid var(--mainText);
+}
+
+.EasyMDEContainer .CodeMirror {
+  background-color: var(--card);
+  border: solid 1px var(--outline);
+  color: var(--mainText);
+}
+
+.EasyMDEContainer .CodeMirror-gutters {
+  background-color: var(--background);
+  border-right: 1px solid var(--outline);
+}
+
+/* @media screen and (min-width: 768px) {
+  .EasyMDEContainer {
+    max-width: 30vw;
+  }
+} */
