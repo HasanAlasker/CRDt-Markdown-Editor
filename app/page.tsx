@@ -1,15 +1,24 @@
-import Link from "next/link";
+"use client";
+import { useRouter } from "next/navigation";
 import Button from "./components/Button";
 import RoomBox from "./components/RoomBox";
 
 export default function Home() {
+  const router = useRouter();
+
+  const createRoom = () => {
+    const uuid = crypto.randomUUID();
+    router.push(`/room/${uuid}`);
+  };
+
   return (
     <div className="flex flex-col space-y-15">
-      {/* generate a unique id and navigate to it */}
-      {/* add the new room to the list */}
-      <Link href={"/room"}>
-        <Button title="Create Room" icon="plus" style="pri" />
-      </Link>
+      <Button
+        title="Create Room"
+        icon="plus"
+        style="pri"
+        onclick={createRoom}
+      />
 
       <section className="border border-outline px-4 py-6 rounded-md bg-card">
         <h1>Available rooms</h1>

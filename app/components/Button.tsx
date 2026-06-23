@@ -20,7 +20,7 @@ export default function Button({ title, onclick, style, type, icon }: Props) {
   const { className } = MAP[style || "pri"];
   return (
     <button
-      className={`flex space-x-2 items-center font-medium rounded-md border border-outline py-2 px-3 ${className}`}
+      className={`flex space-x-2 max-w-fit justify-center items-center font-medium rounded-md border border-outline py-2 px-3 ${className}`}
       type={type || "button"}
       onClick={onclick}
     >

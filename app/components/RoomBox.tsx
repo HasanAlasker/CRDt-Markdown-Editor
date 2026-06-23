@@ -1,6 +1,5 @@
-import React from "react";
-import Button from "./Button";
 import Link from "next/link";
+import Button from "./Button";
 
 export default function RoomBox({ id }: { id: string }) {
   return (
