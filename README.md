@@ -12,6 +12,10 @@ A modern collaborative Markdown editor built with an **offline-first architectur
 
 ---
 
+## 🎥 Demo
+
+![Collaborative Editor Demo](./assets/demo.gif)
+
 ## 📸 Preview
 
 ![Dashboard Overview](https://media.licdn.com/dms/image/v2/D4D2DAQFXhfnDWOcVpQ/profile-treasury-image-shrink_1280_1280/B4DZ75pCphGwAY-/0/1782304746502?e=1782910800&v=beta&t=EIEngQW6HTbhW2999NiZF4vLon-N0oQFX4BAg-OhdI4)
