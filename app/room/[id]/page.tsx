@@ -63,7 +63,7 @@ export default function page() {
     if (!ytext) return;
 
     yDocRef.current?.transact(() => {
-      applyDiff(ytext, newValue);
+      applyDiff(ytext, newValue );
     });
 
     isLocalChange.current = false;
