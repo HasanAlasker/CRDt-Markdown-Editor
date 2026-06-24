@@ -7,6 +7,8 @@ import dynamic from "next/dynamic";
 import * as Y from "yjs";
 import { useParams } from "next/navigation";
 import { IndexeddbPersistence } from "y-indexeddb";
+import { WebsocketProvider } from "y-websocket";
+import { applyDiff } from "@/app/functions/typeDif";
 
 const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
   ssr: false,
@@ -33,15 +35,22 @@ export default function page() {
       setText(ytext.toString());
     });
 
+    const wsProvider = new WebsocketProvider(
+      "ws://localhost:1234",
+      roomId,
+      ydoc,
+    );
+
     ytext.observe(() => {
       // if i made the change, don't re render (prevents infinite loop)
-      if (isLocalChange) return;
+      if (isLocalChange.current) return;
 
       setText(ytext.toString());
     });
 
     return () => {
       presistence.destroy();
+      wsProvider.destroy();
       ydoc.destroy();
     };
   }, []);
@@ -54,8 +63,7 @@ export default function page() {
     if (!ytext) return;
 
     yDocRef.current?.transact(() => {
-      ytext.delete(0, ytext.length);
-      ytext.insert(0, newValue);
+      applyDiff(ytext, newValue);
     });
 
     isLocalChange.current = false;
